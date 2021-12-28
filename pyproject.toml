@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "Inventory-Management-System"
+version = "0.1.0"
+description = ""
+authors = ["HarshitDoshi <5103046+HarshitDoshi@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.0"
+djangorestframework = "^3.13.0"
+Markdown = "^3.3.6"
+django-filter = "^21.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "InventoryManagement_Caselet",
+            "database": "${workspaceFolder:django-caselet-1}/db.sqlite3",
+            "group": "Caselets"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "DEMO-InventoryManagement_Caselet",
+            "group": "Caselets",
+            "database": "${workspaceFolder:django-caselet-1}/caselet.sqlite3"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
