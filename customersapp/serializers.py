@@ -1,4 +1,4 @@
-from .models import Customer, CustomerGroup
+from customersapp.models import Customer, CustomerGroup
 from rest_framework import serializers
 
 
