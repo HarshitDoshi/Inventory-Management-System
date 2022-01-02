@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from customersapp.models import Customer, CustomerGroup
 from customersapp.serializers import CustomerSerializer, CustomerGroupSerializer
 from rest_framework import generics
