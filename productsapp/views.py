@@ -34,6 +34,10 @@ class ProductsList(generics.ListCreateAPIView):
     serializer_class = ProductSerializer
 
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
 class ProductDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer

@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from configuration.views import UserList, UserDetail
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api-auth/", include("rest_framework.urls")),
+    path("api/", include("rest_framework.urls")),
     path("customersapp/", include("customersapp.urls")),
     path("productsapp/", include("productsapp.urls")),
+    path('users/', UserList.as_view()),
+    path('users/<int:pk>/', UserDetail.as_view()),
 ]
