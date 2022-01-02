@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
-from .views import CustomersList, CustomerDetails, CustomerGroupsList, CustomerGroupDetails
+from customersapp.views import CustomersList, CustomerDetails, CustomerGroupsList, CustomerGroupDetails
 
 
 urlpatterns = [

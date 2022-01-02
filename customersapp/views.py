@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Customer, CustomerGroup
-from .serializers import CustomerSerializer, CustomerGroupSerializer
+from customersapp.models import Customer, CustomerGroup
+from customersapp.serializers import CustomerSerializer, CustomerGroupSerializer
 from rest_framework import generics
 
 
