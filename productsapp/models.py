@@ -54,6 +54,11 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    owner = models.ForeignKey(
+        'auth.User',
+        related_name='products',
+        on_delete=models.CASCADE,
+    )
     name = models.CharField(
         verbose_name="Product Name",
         name="Product Name",

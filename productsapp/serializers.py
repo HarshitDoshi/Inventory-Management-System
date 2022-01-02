@@ -23,6 +23,7 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Product
         fields = [
@@ -30,6 +31,7 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
             "price",
             "supplier_id",
             "category_id",
+            "owner",
         ]
 
 
