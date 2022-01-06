@@ -83,16 +83,12 @@ class Product(models.Model):
     )
     supplier_id = models.ForeignKey(
         to=Supplier,
-        verbose_name="Product Supplier",
-        name="Product Supplier",
         on_delete=models.CASCADE,
         blank=False,
         null=False,
     )
     category_id = models.ForeignKey(
         to=Category,
-        verbose_name="Product Category",
-        name="Product Category",
         on_delete=models.CASCADE,
         blank=False,
         null=False,
