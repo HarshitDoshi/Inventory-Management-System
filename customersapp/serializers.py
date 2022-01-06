@@ -9,8 +9,8 @@ class CustomerSerializer(serializers.HyperlinkedModelSerializer):
         model = Customer
         fields = [
             "id",
-            "first_name",
-            "last_name",
+            "First Name",
+            "Last Name",
             "address",
             "phone",
             "email",
@@ -26,6 +26,6 @@ class CustomerGroupSerializer(serializers.HyperlinkedModelSerializer):
         model = CustomerGroup
         fields = [
             "id",
-            "name",
+            "Customer Group Name",
             "owner",
         ]

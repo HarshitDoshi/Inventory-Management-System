@@ -7,7 +7,7 @@ class SupplierSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Supplier
         fields = [
-            "name",
+            "Supplier Name",
             "address",
             "phone",
             "email",
@@ -20,7 +20,7 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Category
         fields = [
-            "name",
+            "Category Name",
             "description",
             "owner",
         ]
@@ -31,12 +31,16 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Product
         fields = [
-            "name",
+            "Product Name",
             "price",
-            "supplier_id",
-            "category_id",
+            "Product Supplier",
+            "Product Category",
             "owner",
         ]
+        extra_kwargs = {
+            'url': {'view_name': 'supplier-details', 'lookup_field': 'Supplier Name'},
+            'Product Supplier': {'lookup_field': 'Supplier Name'}
+        }
 
 
 class ProductOrderSerializer(serializers.HyperlinkedModelSerializer):

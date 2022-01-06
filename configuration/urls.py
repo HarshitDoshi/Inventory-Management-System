@@ -19,7 +19,7 @@ from configuration.views import UserList, UserDetail
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include("rest_framework.urls")),
+    path("authentication/", include("rest_framework.urls")),
     path("customersapp/", include("customersapp.urls")),
     path("productsapp/", include("productsapp.urls")),
     path('users/', UserList.as_view()),

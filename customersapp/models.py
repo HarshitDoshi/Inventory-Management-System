@@ -5,7 +5,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 class CustomerGroup(models.Model):
     owner = models.ForeignKey(
         'auth.User',
-        related_name='products',
+        related_name='customer_groups',
         on_delete=models.CASCADE,
     )
     name = models.CharField(
@@ -27,7 +27,7 @@ class CustomerGroup(models.Model):
 class Customer(models.Model):
     owner = models.ForeignKey(
         'auth.User',
-        related_name='products',
+        related_name='customers',
         on_delete=models.CASCADE,
     )
     first_name = models.CharField(

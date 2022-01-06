@@ -6,10 +6,10 @@ from productsapp.serializers import (
     ProductOrder,
     ProductOrderSerializer,
 )
-from rest_framework import generics
+from rest_framework import generics, permissions
 
 
-class SuppliersList(generics.ListCreateAPIView):
+class SupplierList(generics.ListCreateAPIView):
     queryset = Supplier.objects.all()
     serializer_class = SupplierSerializer
 
@@ -17,12 +17,12 @@ class SuppliersList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 
-class SupplierDetails(generics.RetrieveUpdateDestroyAPIView):
+class SupplierDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Supplier.objects.all()
     serializer_class = SupplierSerializer
 
 
-class CategoriesList(generics.ListCreateAPIView):
+class CategoryList(generics.ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
@@ -30,29 +30,31 @@ class CategoriesList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 
-class CategoryDetails(generics.RetrieveUpdateDestroyAPIView):
+class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
 
-class ProductsList(generics.ListCreateAPIView):
+class ProductList(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
 
-class ProductDetails(generics.RetrieveUpdateDestroyAPIView):
+class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
-class ProductOrdersList(generics.ListCreateAPIView):
+class ProductOrderList(generics.ListCreateAPIView):
     queryset = ProductOrder.objects.all()
     serializer_class = ProductOrderSerializer
 
 
-class ProductOrderDetails(generics.RetrieveUpdateDestroyAPIView):
+class ProductOrderDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = ProductOrder.objects.all()
     serializer_class = ProductOrderSerializer

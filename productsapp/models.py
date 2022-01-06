@@ -6,7 +6,7 @@ from customersapp.models import Customer
 class Supplier(models.Model):
     owner = models.ForeignKey(
         'auth.User',
-        related_name='products',
+        related_name='suppliers',
         on_delete=models.CASCADE,
     )
     name = models.CharField(
@@ -37,14 +37,10 @@ class Supplier(models.Model):
         verbose_name_plural = "Suppliers"
 
 
-    def __str__(self):
-        return self.name
-
-
 class Category(models.Model):
     owner = models.ForeignKey(
         'auth.User',
-        related_name='products',
+        related_name='categories',
         on_delete=models.CASCADE,
     )
     name = models.CharField(
@@ -67,10 +63,6 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
 
 
-    def __str__(self):
-        return self.name
-
-
 class Product(models.Model):
     owner = models.ForeignKey(
         'auth.User',
@@ -80,7 +72,7 @@ class Product(models.Model):
     name = models.CharField(
         verbose_name="Product Name",
         name="Product Name",
-        db_column="product_name",
+        db_column="name",
         max_length=512,
         blank=False,
         null=False,
@@ -91,12 +83,16 @@ class Product(models.Model):
     )
     supplier_id = models.ForeignKey(
         to=Supplier,
+        verbose_name="Product Supplier",
+        name="Product Supplier",
         on_delete=models.CASCADE,
         blank=False,
         null=False,
     )
     category_id = models.ForeignKey(
         to=Category,
+        verbose_name="Product Category",
+        name="Product Category",
         on_delete=models.CASCADE,
         blank=False,
         null=False,
@@ -107,10 +103,6 @@ class Product(models.Model):
         db_table = "product"
         verbose_name = "Product"
         verbose_name_plural = "Products"
-
-    
-    def __str__(self):
-        return "%s" % (self.name)
 
 
 class ProductOrder(models.Model):
@@ -141,7 +133,3 @@ class ProductOrder(models.Model):
         db_table = 'product_order'
         verbose_name = "Product Order"
         verbose_name_plural = "Product Orders"
-
-
-    def __str__(self):
-        return "%s, %s : %s" % (self.customer_id, self.product_id, self.total_price)
