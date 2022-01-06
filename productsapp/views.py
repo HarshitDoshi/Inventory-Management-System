@@ -13,6 +13,9 @@ class SuppliersList(generics.ListCreateAPIView):
     queryset = Supplier.objects.all()
     serializer_class = SupplierSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class SupplierDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = Supplier.objects.all()
@@ -23,6 +26,9 @@ class CategoriesList(generics.ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class CategoryDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
@@ -32,7 +38,6 @@ class CategoryDetails(generics.RetrieveUpdateDestroyAPIView):
 class ProductsList(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

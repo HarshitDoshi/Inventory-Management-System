@@ -3,6 +3,7 @@ from rest_framework import serializers
 
 
 class SupplierSerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Supplier
         fields = [
@@ -10,15 +11,18 @@ class SupplierSerializer(serializers.HyperlinkedModelSerializer):
             "address",
             "phone",
             "email",
+            "owner",
         ]
 
 
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Category
         fields = [
             "name",
             "description",
+            "owner",
         ]
 
 

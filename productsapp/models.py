@@ -4,6 +4,11 @@ from customersapp.models import Customer
 
 
 class Supplier(models.Model):
+    owner = models.ForeignKey(
+        'auth.User',
+        related_name='products',
+        on_delete=models.CASCADE,
+    )
     name = models.CharField(
         verbose_name="Supplier Name",
         name="Supplier Name",
@@ -37,6 +42,11 @@ class Supplier(models.Model):
 
 
 class Category(models.Model):
+    owner = models.ForeignKey(
+        'auth.User',
+        related_name='products',
+        on_delete=models.CASCADE,
+    )
     name = models.CharField(
         verbose_name="Category Name",
         name="Category Name",
