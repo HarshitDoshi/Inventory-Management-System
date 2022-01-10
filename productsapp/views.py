@@ -53,6 +53,9 @@ class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class ProductOrderList(generics.ListCreateAPIView):
     queryset = ProductOrder.objects.all()
