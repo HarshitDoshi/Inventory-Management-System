@@ -48,10 +48,6 @@ class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    
-    
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
