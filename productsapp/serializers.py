@@ -3,22 +3,26 @@ from rest_framework import serializers
 
 
 class SupplierSerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Supplier
         fields = [
-            "name",
+            "Supplier Name",
             "address",
             "phone",
             "email",
+            "owner",
         ]
 
 
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Category
         fields = [
-            "name",
+            "Category Name",
             "description",
+            "owner",
         ]
 
 
@@ -27,10 +31,8 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Product
         fields = [
-            "name",
+            "Product Name",
             "price",
-            "supplier_id",
-            "category_id",
             "owner",
         ]
 

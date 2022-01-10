@@ -3,6 +3,11 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class CustomerGroup(models.Model):
+    owner = models.ForeignKey(
+        'auth.User',
+        related_name='customer_groups',
+        on_delete=models.CASCADE,
+    )
     name = models.CharField(
         verbose_name="Customer Group Name",
         name="Customer Group Name",
@@ -20,6 +25,11 @@ class CustomerGroup(models.Model):
 
 
 class Customer(models.Model):
+    owner = models.ForeignKey(
+        'auth.User',
+        related_name='customers',
+        on_delete=models.CASCADE,
+    )
     first_name = models.CharField(
         verbose_name="First Name",
         name="First Name",

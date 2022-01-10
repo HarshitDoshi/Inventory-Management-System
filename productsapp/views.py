@@ -6,48 +6,58 @@ from productsapp.serializers import (
     ProductOrder,
     ProductOrderSerializer,
 )
-from rest_framework import generics
+from rest_framework import generics, permissions
 
 
-class SuppliersList(generics.ListCreateAPIView):
+class SupplierList(generics.ListCreateAPIView):
     queryset = Supplier.objects.all()
     serializer_class = SupplierSerializer
-
-
-class SupplierDetails(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Supplier.objects.all()
-    serializer_class = SupplierSerializer
-
-
-class CategoriesList(generics.ListCreateAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
-
-
-class CategoryDetails(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
-
-
-class ProductsList(generics.ListCreateAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
-
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
 
-class ProductDetails(generics.RetrieveUpdateDestroyAPIView):
+class SupplierDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Supplier.objects.all()
+    serializer_class = SupplierSerializer
+
+
+class CategoryList(generics.ListCreateAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
+class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+
+class ProductList(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 
-class ProductOrdersList(generics.ListCreateAPIView):
+class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
+class ProductOrderList(generics.ListCreateAPIView):
     queryset = ProductOrder.objects.all()
     serializer_class = ProductOrderSerializer
 
 
-class ProductOrderDetails(generics.RetrieveUpdateDestroyAPIView):
+class ProductOrderDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = ProductOrder.objects.all()
     serializer_class = ProductOrderSerializer
