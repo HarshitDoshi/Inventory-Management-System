@@ -26,6 +26,6 @@ class CustomerGroupSerializer(serializers.HyperlinkedModelSerializer):
         model = CustomerGroup
         fields = [
             "id",
-            "Customer Group Name",
+            "customer_group_name",
             "owner",
         ]

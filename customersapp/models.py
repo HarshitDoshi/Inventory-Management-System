@@ -7,10 +7,12 @@ class CustomerGroup(models.Model):
         'auth.User',
         related_name='customer_groups',
         on_delete=models.CASCADE,
+        blank=False,
+        null=True,
     )
     name = models.CharField(
         verbose_name="Customer Group Name",
-        name="Customer Group Name",
+        name="customer_group_name",
         db_column="name",
         max_length=512,
         blank=False,
