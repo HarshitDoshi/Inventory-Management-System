@@ -37,10 +37,6 @@ class Supplier(models.Model):
         verbose_name_plural = "Suppliers"
 
 
-    def __str__(self):
-        return self.name
-
-
 class Category(models.Model):
     owner = models.ForeignKey(
         'auth.User',
@@ -65,10 +61,6 @@ class Category(models.Model):
         db_table = "category"
         verbose_name = "Category"
         verbose_name_plural = "Categories"
-
-
-    def __str__(self):
-        return self.name
 
 
 class Product(models.Model):
@@ -108,10 +100,6 @@ class Product(models.Model):
         verbose_name = "Product"
         verbose_name_plural = "Products"
 
-    
-    def __str__(self):
-        return "%s" % (self.name)
-
 
 class ProductOrder(models.Model):
     customer_id = models.ForeignKey(
@@ -141,7 +129,3 @@ class ProductOrder(models.Model):
         db_table = 'product_order'
         verbose_name = "Product Order"
         verbose_name_plural = "Product Orders"
-
-
-    def __str__(self):
-        return "%s, %s : %s" % (self.customer_id, self.product_id, self.total_price)
