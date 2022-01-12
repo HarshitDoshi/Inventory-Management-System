@@ -1,13 +1,13 @@
-from django.urls import path
-from rest_framework.urlpatterns import format_suffix_patterns
-from customersapp.views import CustomerList, CustomerDetail, CustomerGroupList, CustomerGroupDetail
+from django.urls import path, include
+from customersapp.views import (
+    CustomerViewSet,
+    CustomerGroupViewSet,
+)
+from rest_framework.routers import DefaultRouter
 
 
-urlpatterns = [
-    path("customers/", CustomerList.as_view()),
-    path("customers/<int:pk>", CustomerDetail.as_view()),
-    path("customers/groups/", CustomerGroupList.as_view()),
-    path("customers/groups/<int:pk>", CustomerGroupDetail.as_view()),
-]
+app_name = "customersapp"
 
-urlpatterns = format_suffix_patterns(urlpatterns=urlpatterns)
+customersapp_router = DefaultRouter()
+customersapp_router.register(r"customers/groups", CustomerGroupViewSet)
+customersapp_router.register(r"customers", CustomerViewSet)

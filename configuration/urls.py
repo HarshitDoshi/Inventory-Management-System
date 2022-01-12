@@ -15,13 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from configuration.views import UserList, UserDetail
+from configuration.views import UserViewSet
+from rest_framework.routers import DefaultRouter
+from productsapp.urls import productsapp_router
+from customersapp.urls import customersapp_router
+
+router = DefaultRouter()
+router.register(r"users", UserViewSet)
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("", include(router.urls),),
+    path("", include(productsapp_router.urls),),
+    path("", include(customersapp_router.urls),),
     path("authentication/", include("rest_framework.urls")),
-    path("customersapp/", include("customersapp.urls")),
-    path("productsapp/", include("productsapp.urls")),
-    path('users/', UserList.as_view()),
-    path('users/<int:pk>/', UserDetail.as_view()),
+    path("admin/", admin.site.urls),
 ]

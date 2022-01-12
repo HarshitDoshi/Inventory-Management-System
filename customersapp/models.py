@@ -8,7 +8,7 @@ class CustomerGroup(models.Model):
         related_name='customer_groups',
         on_delete=models.CASCADE,
         blank=False,
-        null=True,
+        null=False,
     )
     name = models.CharField(
         verbose_name="Customer Group Name",
