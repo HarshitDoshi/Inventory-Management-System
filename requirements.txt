@@ -1,0 +1,16 @@
+asgiref @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/66/e6/9d/1120805fa1cbf481e628bb06bdda3cc7a6623fce6ed7ceccf057e53faf/asgiref-3.4.1-py3-none-any.whl
+black @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/3a/bb/f9/2162891ce42a7fe19676aa1538c230b1ff4f80b730b49cfa59e94f252b/black-21.12b0-py3-none-any.whl
+click @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/fa/59/1c/2eaf2b8f82cecf1e8d2d6dba67bd01214cf590d308bd9c917aa19c3eda/click-8.0.3-py3-none-any.whl
+Django @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/02/91/73/76ae62159c66184acbc096e9189ac70227ccd1308be121017f040f323f/Django-4.0-py3-none-any.whl
+django-filter @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/ea/f4/ac/06d7509a6499a710bafc188c1566f529bd8027eeb970eb047562ebd233/django_filter-21.1-py3-none-any.whl
+django-phonenumber-field @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/3b/38/7f/fc37a6fb2155b2c57cda02cccd3fa74608cde5fb4ca05fd359e776078a/django_phonenumber_field-6.0.0-py3-none-any.whl
+djangorestframework @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/fc/72/2f/ea8e0134b7efe353e177e638620ca4a70284960935020a5dcd09f41161/djangorestframework-3.13.0-py3-none-any.whl
+Markdown @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/f3/c6/15/31b0fe09819889fa6d2a75b3e1c9645cba253902052e7fc773778b2725/Markdown-3.3.6-py3-none-any.whl
+mypy-extensions @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/2f/c6/09/3e1afdcb75322c65b786e63cd7e879b6be3db36dea78ca376db5483ae4/mypy_extensions-0.4.3-py2.py3-none-any.whl
+pathspec @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/48/a0/9f/f5128d9e11d591bca7a942dd80ec44f9b2de8294775c68e0b99beeef93/pathspec-0.9.0-py2.py3-none-any.whl
+phonenumbers @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/1c/52/17/b30bb72b9d0741928ce94db942519978cb0da11a8a0ae76649ae8b6b9c/phonenumbers-8.12.40-py2.py3-none-any.whl
+platformdirs @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/0c/47/e1/fc280f01f47c65d2f8b5dc54fb1a127d9738c5b8f241563cfca7408c8a/platformdirs-2.4.1-py3-none-any.whl
+pytz @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/a0/f8/66/b50e6d372fa21e4d6db4b2fe5c5e94aaf59b82d02a7b3215fbc4fae889/pytz-2021.3-py2.py3-none-any.whl
+sqlparse @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/10/f5/22/c9c991a71e27c4d8f69907d92cce74a369cbb3183dc4a6d27e2ae4ab0b/sqlparse-0.4.2-py3-none-any.whl
+tomli @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/2e/78/2d/b0093c794e365745793f1e08c49a87e72513e653d3e737c7e2f7e204c8/tomli-1.2.3-py3-none-any.whl
+typing_extensions @ file:///Users/doshiharshit/Library/Caches/pypoetry/artifacts/4f/0f/a7/b082eaf8890f4023be4c474d1c6eb672d28c6602d213a487c61e19a66b/typing_extensions-4.0.1-py3-none-any.whl
